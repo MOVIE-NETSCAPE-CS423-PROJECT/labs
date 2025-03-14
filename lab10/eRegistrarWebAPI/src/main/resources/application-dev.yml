@@ -1,0 +1,30 @@
+
+# Development Config Settings
+spring:
+  application:
+    name: eRegistrarWebAPI
+  main:
+    banner-mode: off
+  # Datasource config settings
+  datasource:
+    url: jdbc:mysql://localhost:3306/swe-lab11-student-registration-system
+    username: root
+    password: password
+  # JPA/Hibernate config settings
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    # Disable cache for development
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    enabled: true
+    cache: false
+
+logging:
+  level:
+    root: info

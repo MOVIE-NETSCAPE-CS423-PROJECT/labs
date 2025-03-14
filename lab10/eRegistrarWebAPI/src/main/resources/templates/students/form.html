@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student Form</title>
+</head>
+<body>
+<h2>Student Form</h2>
+
+<form th:action="@{/students}" method="post" th:object="${student}">
+    <input type="hidden" th:field="*{studentId}">
+
+    <label>Student Number: </label>
+    <input type="text" th:field="*{studentNumber}" required>
+    <br>
+
+    <label>First Name: </label>
+    <input type="text" th:field="*{firstName}" required>
+    <br>
+
+    <label>Middle Name: </label>
+    <input type="text" th:field="*{middleName}">
+    <br>
+
+    <label>Last Name: </label>
+    <input type="text" th:field="*{lastName}" required>
+    <br>
+
+    <label>CGPA: </label>
+    <input type="number" step="0.01" th:field="*{cgpa}">
+    <br>
+
+    <label>Enrollment Date: </label>
+    <input type="date" th:field="*{enrollmentDate}" required>
+    <br>
+    <label>Is International Student:</label><br>
+    <input type="radio" id="internationalYes" name="isInternational" value="yes" th:field="*{isInternational}" required>
+    <label for="internationalYes">Yes</label>
+    <input type="radio" id="internationalNo" name="isInternational" value="no" th:field="*{isInternational}" required>
+    <label for="internationalNo">No</label>
+    <br><br>
+
+
+    <button type="submit">Save</button>
+</form>
+
+<br>
+<a href="/students">Back to List</a>
+</body>
+</html>
+
